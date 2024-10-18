@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aws_jenkins_1_argo
+  name: aws-jenkins-1-argo
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: aws_jenkins_1_argo
+      app: aws-jenkins-1-argo
   template:
     metadata:
       labels:
-        app: aws_jenkins_1_argo
+        app: aws-jenkins-1-argo
     spec:
       containers:
-      - name: aws_jenkins_1_argo
+      - name: aws-jenkins-1-argo
         image: hanoguz00/github_aws_1:1.0.49
         resources:
           limits:
