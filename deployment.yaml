@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: aws-jenkins-1-argo
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: aws-jenkins-1-argo
