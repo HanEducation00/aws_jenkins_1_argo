@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: aws_jenkins_1_argo
+  name: aws-jenkins-1-argo
   labels: 
-    app: aws_jenkins_1_argo
+    app: aws-jenkins-1-argo
 spec:
   selector:
-    app: aws_jenkins_1_argo
+    app: aws-jenkins-1-argo
     
   ports:
   - port: 8082
