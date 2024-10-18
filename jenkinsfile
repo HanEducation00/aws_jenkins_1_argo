@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout from SCM') {
             steps {
                 //   checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mimaraslan/gitops-devops-003-pipeline-aws']])
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/mimaraslan/gitops-devops-003-pipeline-aws'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/HanEducation00/aws_jenkins_1_argo'
             }
         }
         
