@@ -4,8 +4,8 @@ pipeline {
     }
     
     environment {
-        APP_NAME = "aws-jenkins-1-argo"
-        IMAGE_TAG = "latest"  // IMAGE_TAG ekleyin
+        APP_NAME = "aws_jenkins_1_argo"
+        IMAGE_TAG = "latest"
     }
 
     stages {
@@ -17,7 +17,7 @@ pipeline {
 
         stage('Checkout from SCM') {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/HanEducation00/aws_jenkins_1_argo'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/HanEducation00/aws_jenkins_1_argo.git'
             }
         }
         
@@ -40,10 +40,9 @@ pipeline {
                    git commit -m "Updated Deployment Manifest" --allow-empty
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                  sh "git push https://github.com/HanEducation00/aws-jenkins-1-argo main" 
+                  sh "git push https://github.com/HanEducation00/aws_jenkins_1_argo.git main" 
                 }
             }
         }
-
     }
 }
