@@ -4,7 +4,8 @@ pipeline {
     }
     
     environment {
-        APP_NAME = "devops-003-pipeline-aws"
+        APP_NAME = "aws-jenkins-1-argo"
+        IMAGE_TAG = "latest"  // IMAGE_TAG ekleyin
     }
 
     stages {
@@ -16,8 +17,7 @@ pipeline {
 
         stage('Checkout from SCM') {
             steps {
-                //   checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mimaraslan/gitops-devops-003-pipeline-aws']])
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/HanEducation00/aws_jenkins_1_argo'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/HanEducation00/aws-jenkins-1-argo'
             }
         }
         
@@ -31,22 +31,19 @@ pipeline {
             }
         }
 
-
         stage("Push the changed deployment file to Git") {
             steps {
                 sh """
-                   git config --global user.name "HanEducation00
-"
+                   git config --global user.name "HanEducation00"
                    git config --global user.email "han.oguz.education@gmail.com"
                    git add deployment.yaml
-                   git commit -m "Updated Deployment Manifest"
+                   git commit -m "Updated Deployment Manifest" --allow-empty
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                  sh "git push https://github.com/HanEducation00/aws_jenkins_1_argo main" 
+                  sh "git push https://github.com/HanEducation00/aws-jenkins-1-argo main" 
                 }
             }
         }
 
-      
     }
 }
