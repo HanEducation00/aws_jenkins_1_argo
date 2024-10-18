@@ -4,7 +4,7 @@ pipeline {
     }
     
     environment {
-        APP_NAME = "aws_jenkins_1_argo"
+        APP_NAME = "aws_jenkins_1"
         IMAGE_TAG = "latest"
     }
 
