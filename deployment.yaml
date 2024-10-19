@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aws-jenkins-1
+  name: aws-jenkins-1:1.0.73
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: aws-jenkins-1
+      app: aws-jenkins-1:1.0.73
   template:
     metadata:
       labels:
-        app: aws-jenkins-1
+        app: aws-jenkins-1:1.0.73
     spec:
       containers:
-      - name: aws-jenkins-1
+      - name: aws-jenkins-1:1.0.73
         image: hanoguz00/github_aws_1:1.0.72
         resources:
           limits:
