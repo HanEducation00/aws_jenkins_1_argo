@@ -4,7 +4,7 @@ pipeline {
     }
     
     environment {
-        APP_NAME = "aws_jenkins_1"
+        APP_NAME = "aws-jenkins-1"
     }
 
     stages {
