@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: aws-jenkins-1:
-        image: hanoguz00/github_aws_1:1.0.49
+        image: hanoguz00/github_aws_1:1.0.72
         resources:
           limits:
             memory: "256Mi"
